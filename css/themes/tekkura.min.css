@@ -1,0 +1,411 @@
+:root{
+    /* ---------------------------------------------------------------------- */
+    /* 1. CYBER-MODERN TEXT COLORS (ALL TEXT IN CYNA) */
+    /* ---------------------------------------------------------------------- */
+    --color-text: #00FFFF; /* Pure Cyan for all main text */
+    --color-text-hover: #1E90FF; /* UPDATED: Dark Blue (Dodger Blue) */
+    --color-text-link: #00E4FF; /* Slightly darker cyan for links */
+    --color-text-link-hover: #1E90FF; /* UPDATED: Dark Blue (Dodger Blue) */
+    --color-text-sub: #A5F3FC; /* Light cyan for secondary text/labels */
+    --color-text-label: #A5F3FC;
+    --color-text-placeholder: #06B6D4;
+    --color-text-muted: #787878;
+
+    /* ---------------------------------------------------------------------- */
+    /* 2. BACKGROUNDS (Dark/Black/Space) */
+    /* ---------------------------------------------------------------------- */
+    --color-background-top: #100021; /* Very dark purple/black for top menu */
+    --color-background-side: #050012; /* Deep black for side menu */
+    --color-background-content: #0B0018; /* Dark, subtle background for content area */
+    --color-background-hover: #1F0038; /* Dark purple hover effect */
+    --color-background-alt: #100021; /* Alt background for alternating rows */
+
+    /* ---------------------------------------------------------------------- */
+    /* 3. ACCENTS & BORDERS (Neon Glow) */
+    /* ---------------------------------------------------------------------- */
+    --color-border: var(--color-focus); /* CYAN */
+    --color-border-alt: #2A0054;
+    --color-focus: #00FFFF; /* Bright Cyan for focus/input border */
+    --color-select: #3A0074; /* Selected state background */
+    --color-shadow: rgba(0, 0, 0, 0.5); /* Standard shadow */
+    --color-box-shadow: 0 0 15px #00FFFF99; /* NEON GLOW effect */
+
+    /* ---------------------------------------------------------------------- */
+    /* 4. BUTTONS & INPUTS (Geometric & Glow) */
+    /* ---------------------------------------------------------------------- */
+    --color-button-primary: #00FFFF; /* Primary buttons are bright cyan */
+    --color-button-primary-hover: #FFFFFF; /* White on hover */
+    --color-button-primary-text: #050012; /* Deep black text on cyan buttons */
+
+    /* Custom Secondary Button Colors (Override original secondary colors to Transparent Dark Blue/Cyan) */
+    --color-button-secondary-background: #1e90ff78; /* ADJUSTED: Transparent Dark Blue */
+    --color-button-secondary-hover: #1A7AD9; /* Darker Blue for hover */
+    --color-button-secondary-text: #00FFFF; /* Cyan Text */
+    --color-button-secondary-border: #00FFFF; /* Cyan Border (Final requested border) */
+
+    --color-input-background: rgba(0, 0, 0, 0.5); /* UPDATED: Black 50% transparent */
+    --color-input-border: var(--color-focus); /* CYAN */
+
+    /* ---------------------------------------------------------------------- */
+    /* 5. ALERT COLORS (Retain standard meaning but with neon touch) */
+    /* ---------------------------------------------------------------------- */
+    --alert-success-color: #00FF99; /* Neon Green */
+    --alert-info-color: #00FFFF; /* Cyan */
+    --alert-warning-color: #FFFF00; /* Neon Yellow */
+    --alert-danger-color: #FF0099; /* Neon Pink/Magenta */
+}
+
+/* --- CRITICAL ADJUSTMENT: CORRECTED BACKGROUND IMAGE LINK --- */
+body {
+    background-image: url(https://raw.githubusercontent.com/qwerc999/modern_bg/4a38577903966c517b0abd79e310c13225f50e8a/modern_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: var(--color-background-content);
+    color: var(--color-text);
+}
+/* ----------------------------------------------------------- */
+
+/* Make sure all general text containers and tables inherit the cyan color */
+.container,
+.data-table td,
+.data-table th,
+.card-header,
+.u-label,
+label,
+span,
+p {
+    color: var(--color-text) !important;
+}
+
+/* Links and menu items */
+a,
+.nav-link {
+    color: var(--color-text-link) !important;
+}
+
+a:hover,
+.nav-link:hover {
+    color: var(--color-text-link-hover) !important;
+}
+
+/* Side navigation active state */
+.sidebar-nav-item.active a {
+    background-color: var(--color-select) !important;
+    color: var(--color-text) !important;
+    border-left: 3px solid var(--color-focus) !important;
+}
+
+/* --- FORM CONTROL STYLING --- */
+/* Target specific form-control class, overrides default input colors */
+.form-control {
+    /* Dodger Blue (#1E90FF) at 30% transparency (requested) */
+    background-color: rgba(30, 144, 255, 0.3) !important;
+    /* Pure Cyan border (requested) */
+    border-color: #00FFFF !important;
+    color: var(--color-text) !important;
+}
+
+/* Input fields and select boxes to match the dark theme */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+    /* Uses the transparent cyan background */
+    background-color: var(--color-input-background) !important;
+    color: var(--color-text) !important;
+    /* Uses the newly changed input border color (now cyan) */
+    border: 1px solid var(--color-input-border) !important;
+    box-shadow: none !important;
+}
+
+/* Focus state for inputs - will glow brighter cyan */
+input:focus,
+textarea:focus,
+select:focus,
+.form-control:focus { /* Added .form-control:focus here */
+    border-color: var(--color-focus) !important;
+    box-shadow: 0 0 5px var(--color-focus) !important;
+}
+/* ---------------------------- */
+
+
+/* Cards and main content blocks */
+.card {
+    background-color: var(--color-background-content) !important;
+    /* Uses the newly changed border color (now cyan) */
+    border: 1px solid var(--color-border) !important;
+    box-shadow: var(--color-box-shadow) !important;
+}
+
+/* Top menu bar */
+.header {
+    background-color: var(--color-background-top) !important;
+    /* Uses the newly changed border color (now cyan) */
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
+/* --- NEW: Top Bar Styling (50% Transparent Black, Cyan Border) --- */
+.top-bar {
+    /* Black 50% transparent (rgba(0, 0, 0, 0.5)) */
+    background: rgba(0, 0, 0, 0.5) !important;
+    /* Using the standard neon glow shadow for consistency */
+    box-shadow: var(--color-box-shadow) !important;
+    /* Cyan border */
+    border-bottom: 1px solid var(--color-focus) !important;
+}
+/* ----------------------------------------------------------------- */
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--color-background-side) !important;
+    /* Uses the newly changed border color (now cyan) */
+    border-right: 1px solid var(--color-border) !important;
+}
+
+/* Table header/footer */
+.data-table thead th, .data-table tfoot td {
+    background-color: var(--color-background-alt) !important;
+    color: var(--color-text) !important;
+    /* Uses the newly changed border color (now cyan) */
+    border-bottom: 1px solid var(--color-border) !important;
+}
+
+/* Table rows */
+.data-table tbody tr:nth-child(even) {
+    background-color: var(--color-background-alt) !important;
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background-color: var(--color-background-content) !important;
+}
+
+/* Primary Button Styling */
+.button.primary {
+    background-color: var(--color-button-primary) !important; /* Bright Cyan */
+    color: var(--color-button-primary-text) !important; /* Deep Black Text */
+    border: none !important;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button.primary:hover {
+    background-color: var(--color-button-primary-hover) !important; /* White Hover */
+    box-shadow: 0 0 10px var(--color-button-primary) !important; /* Cyan Glow */
+}
+
+/* --- Secondary Button Styling (Combining properties with overrides) --- */
+
+.button-secondary {
+    /* Base styles from user input */
+    font-weight: 400 !important;
+    box-shadow: 0 1px 4px #0003, inset 0 0 1px #141414, inset 0 0 3px #00000080;
+
+    /* Override with theme variables to enforce Transparent Dark Blue/Cyan */
+    background: var(--color-button-secondary-background) !important; /* Transparent Dark Blue */
+    color: var(--color-button-secondary-text) !important; /* Cyan Text */
+    border: 1px solid var(--color-button-secondary-border) !important; /* Cyan Border (Final requested border) */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* --- Generic Button Styling (Combining properties with overrides) --- */
+.button, .button.flat {
+    /* Base styles from user input */
+    color: #eee !important; /* Use a slightly lighter gray for text shadow contrast, though theme text color overrides this later */
+    text-shadow: 0 1px 1px #00000059 !important;
+    font-weight: 400 !important;
+    box-shadow: 0 1px 4px #0003, inset 0 0 1px #141414, inset 0 0 3px #00000080;
+
+    /* Override with theme variables to enforce Transparent Dark Blue/Cyan */
+    background: var(--color-button-secondary-background) !important; /* Transparent Dark Blue */
+    color: var(--color-button-secondary-text) !important; /* Cyan Text */
+    border: 1px solid var(--color-button-secondary-border) !important; /* Cyan Border */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover, .button-secondary:hover, .button.flat:hover {
+    /* Hover effect */
+    background-color: var(--color-button-secondary-hover) !important; /* Darker Blue */
+    box-shadow: 0 0 5px var(--color-focus) !important; /* Cyan Glow */
+}
+
+/* Updates Banner Button - Reverted to old styling logic */
+.updates-banner button {
+    color: #fff;
+    background-color: #0000;
+    border: 0;
+    padding: 0;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.updates-banner button:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Alert Boxes */
+.alert-info {
+    background-color: #00FFFF20; /* Cyan background, very transparent */
+    border-color: var(--alert-info-color) !important;
+    color: var(--alert-info-color) !important;
+}
+
+.alert-danger {
+    background-color: #FF009920; /* Pink background, very transparent */
+    border-color: var(--alert-danger-color) !important;
+    color: var(--alert-danger-color) !important;
+}
+
+.alert-success {
+    background-color: #00FF9920; /* Green background, very transparent */
+    border-color: var(--alert-success-color) !important;
+    color: var(--alert-success-color) !important;
+}
+
+/* Specific styling for the toolbar */
+.toolbar {
+    /* Black 60% transparent background (40% opacity) */
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    /* Solid cyan borders */
+    border-top: 1px solid var(--color-focus) !important;
+    border-bottom: 1px solid var(--color-focus) !important;
+}
+
+/* Styling for div.units-table */
+div.units-table {
+    /* Black 60% transparent background (40% opacity) */
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    /* 80% transparent cyan border */
+    border: 1px solid rgba(0, 255, 255, 0.2) !important;
+}
+
+/* Styling for units-table-header */
+.units-table-header {
+    /* Black 60% transparent background (40% opacity) */
+    background: rgba(0, 0, 0, 0.4) !important;
+    /* Solid cyan borders */
+    border-top: 1px solid #00FFFF !important; /* NEW: Added top border */
+    border-bottom: 1px solid var(--color-focus) !important;
+    border-left: 1px solid var(--color-focus) !important;
+    border-right: 1px solid var(--color-focus) !important;
+    box-shadow: none !important;
+}
+
+/* Styling for units-table-row */
+.units-table-row {
+    /* Bright cyan border */
+    border: 1px solid var(--color-focus) !important;
+}
+
+/* --- Units Table Row Hover Effect (Blue #1e90ff at 50% opacity) --- */
+.units-table-row:hover {
+    /* 1e90ff is rgb(30, 144, 255). We set opacity to 0.5 */
+    background-color: rgba(30, 144, 255, 0.5) !important;
+}
+/* ------------------------------------------------------------------ */
+
+/* --- UPDATED: Toolbar Submit Button Styling (30% Transparent Dodger Blue) --- */
+.toolbar-input-submit {
+    /* Dodger Blue (rgb(30, 144, 255)) at 70% opacity */
+    background-color: rgba(30, 144, 255, 0.7) !important;
+    border: 1px solid #00ffff !important;
+    color: var(--color-button-primary-text) !important; /* Black text for contrast */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.toolbar-input-submit:hover {
+    /* Solid Dodger Blue on hover, with matching glow */
+    background-color: #1E90FF !important;
+    box-shadow: 0 0 5px #1E90FF !important;
+}
+/* ------------------------------------------------------------------ */
+
+/* --- NEW: Collapsible Box Header Styling (50% Transparent Black, Cyan Border, Cyan Glow) --- */
+.box-collapse-header {
+    /* Cyan Glow Text Shadow */
+    text-shadow: 0 0 5px var(--color-focus) !important;
+    /* 50% transparent black background */
+    background: rgba(0, 0, 0, 0.5) !important;
+    /* Solid Cyan border */
+    border: 1px solid var(--color-focus) !important;
+    /* Ensure text is cyan by default */
+    color: var(--color-text) !important;
+    transition: color 0.3s, background 0.3s;
+}
+
+.box-collapse-header:hover {
+    /* Dodger Blue text on hover */
+    color: #1E90FF !important;
+    /* Subtle background change on hover */
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+/* Inline Icons (fa/fas) */
+.fa, .fas {
+    color: var(--color-text-link); /* Set icon color to match links/accents */
+}
+
+/* Adjustments for specific elements that might override text color */
+.title, h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text) !important;
+}
+
+/* Global color fallback */
+body * {
+    &:not(input):not(textarea):not(select) {
+        color: var(--color-text);
+    }
+}
+
+/* --- NEW/UPDATED MEDIA QUERY FOR DESKTOP MENU LINKS AND SERVER SUMMARY --- */
+@media (min-width: 768px) {
+    .main-menu-item-link {
+        /* Set border-bottom to 4px solid Dodger Blue (#1e90ff) at 50% transparency */
+        border-bottom: 4px solid rgba(30, 144, 255, 0.5) !important;
+        /* Ensure base text color is consistent and add smooth transition */
+        color: var(--color-text-link) !important;
+        transition: all 0.2s ease-in-out;
+    }
+
+    /* RESTORING HOVER EFFECT */
+    .main-menu-item-link:hover {
+        /* Text color changes to the darker blue on hover */
+        color: var(--color-text-hover) !important;
+        /* Add a very subtle, transparent blue background for visual feedback */
+        background-color: rgba(30, 144, 255, 0.1) !important;
+        /* ADDED: Solid Dodger Blue border on hover */
+        border-bottom: 4px solid #1E90FF !important;
+    }
+
+    /* --- NEW: Server Summary Styling for Desktop --- */
+    .server-summary {
+        display: flex;
+        background: rgba(0, 0, 0, 0.5) !important; /* Black 50% transparent */
+    }
+
+    /* --- NEW: Box Collapse Content Styling for Desktop --- */
+    .box-collapse-content {
+        background: rgba(0, 0, 0, 0.5) !important; /* Black 50% transparent */
+    }
+}
+/* --------------------------------------------------- */
+
+/* --- NEW FOOTER STYLING (Cyan Border Top) --- */
+.app-footer {
+    border-top: 1px solid var(--color-focus); /* Uses the main Cyan focus color */
+}
+/* ------------------------------------------- */
+
+/* --- NEW MEDIA QUERY FOR LARGER DESKTOP STYLES --- */
+@media (min-width: 1024px) {
+    /* Style the units table badges for large screens */
+    .units-table-badge {
+        background-color: transparent !important;
+        border: 1px solid var(--color-focus) !important; /* Cyan border */
+    }
+}

@@ -1,0 +1,67 @@
+----------------------------------------------------------------------
+
+Hestia Control Panel Customization Git Ignore (FINAL)
+
+This list includes all 12 custom files and the entire /web/images/custom folder.
+
+----------------------------------------------------------------------
+
+1. IGNORE EVERYTHING BY DEFAULT
+
+2. CREATE EXCEPTIONS (Allow these files to be tracked)
+
+--- DIRECTORY INCLUSIONS ---
+
+We must include the parent directories to access the files inside them.
+
+!web/
+!web/*/
+!web/fm/
+!web/templates/
+!web/templates/includes/
+!web/templates/pages/
+!web/templates/pages/login/
+!web/inc/
+!web/inc/2fa/
+!web/css/
+!web/css/themes/
+!web/images/
+
+--- FILE INCLUSIONS (12 Files) ---
+
+Branding/Theme Files
+
+!web/templates/includes/css.php
+!web/templates/includes/panel.php
+!web/templates/includes/app-footer.php
+!web/css/themes/tekkura.min.css
+
+Login Page Files
+
+!web/templates/pages/login/login.php
+!web/templates/pages/login/login_1.php
+
+Dashboard/Server Summary Files
+
+!web/templates/pages/list_server_info.php
+!web/templates/pages/list_services.php
+
+File Manager Files
+
+!web/fm/index.php
+!web/fm/configuration.php
+
+2FA Files
+
+!web/inc/2fa/check.php
+!web/inc/2fa/secret.php
+
+--- FOLDER INCLUSION (The entire /custom/ directory) ---
+
+This ensures all your logos, favicons, and assets are tracked.
+
+!web/images/custom/
+
+--- GIT CONFIGURATION ---
+
+!.gitignore
